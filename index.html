@@ -1,0 +1,370 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="text-gray-900">
+    <!-- HEADER -->
+    <header>
+      <!-- Header Top -->
+      <div class="header-top bg-black">
+        <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 items-center py-3 gap-4">
+          <!-- Left -->
+          <form class="grid grid-cols-[auto_auto_auto] items-center gap-4 justify-center md:justify-start">
+            <img src="./img/flag.webp" alt="flag" class="w-[100px]" />
+            <select
+              name="country"
+              id="country"
+              class="border-black bg-black text-white"
+            >
+              <option value="usa">Usa</option>
+              <option value="spn">SPN</option>
+              <option value="cda">CDA</option>
+              <option value="usd">USD</option>
+            </select>
+            <h3 class="text-white">+777 2345 7886</h3>
+          </form>
+
+          <!-- Right -->
+          <nav class="justify-center md:justify-end flex">
+            <ul class="grid grid-flow-col gap-3 text-center md:text-right">
+              <li><a href="#" class="text-white hover:text-red-500">My Account</a></li>
+              <li><a href="#" class="text-white hover:text-red-500">Wish List</a></li>
+              <li><a href="#" class="text-white hover:text-red-500">Shopping</a></li>
+              <li><a href="#" class="text-white hover:text-red-500">Cart</a></li>
+              <li><a href="#" class="text-white hover:text-red-500">Checkout</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Header Bottom -->
+      <div class="header-bottom py-4">
+        <div
+          class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-[auto_1fr_auto_auto_auto] items-center gap-4 text-center xl:text-left"
+        >
+          <!-- Logo -->
+          <a href="index.html" class="justify-self-center xl:justify-self-start"
+            ><img src="./img/logo.png.webp" alt="logo"
+          /></a>
+
+          <!-- Nav -->
+          <nav class="order-3 xl:order-none">
+            <ul
+              class="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-flow-col gap-3 items-center justify-center xl:justify-start"
+            >
+              <li><a href="index.html" class="text-lg hover:text-red-500">Home</a></li>
+              <li><a href="#" class="text-lg hover:text-red-500">Category</a></li>
+
+              <!-- Dropdown: Latest -->
+              <li class="relative">
+                <button
+                  id="latestBtn"
+                  class="text-lg hover:text-red-500 flex items-center justify-center xl:justify-start gap-1"
+                >
+                  Latest <sup class="text-red-500">Hot</sup>
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+
+                <div
+                  id="latestDropdown"
+                  class="hidden absolute top-full left-0 mt-2 w-40 bg-white text-black rounded shadow-lg"
+                >
+                  <a href="#" class="block px-4 py-2 hover:text-red-500">Product List</a>
+                  <a href="#" class="block px-4 py-2 hover:text-red-500">Product Details</a>
+                </div>
+              </li>
+
+              <!-- Dropdown: Blog -->
+              <li class="relative">
+                <button
+                  id="blogBtn"
+                  class="text-lg hover:text-red-500 flex items-center justify-center xl:justify-start gap-1"
+                >
+                  Blog
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+                <div
+                  id="blogDropdown"
+                  class="hidden absolute top-full left-0 mt-2 w-40 bg-white text-black rounded shadow-lg"
+                >
+                  <a href="#" class="block px-4 py-2 hover:text-red-500">Blog</a>
+                  <a href="#" class="block px-4 py-2 hover:text-red-500">Blog Details</a>
+                </div>
+              </li>
+
+              <!-- Dropdown: Pages -->
+              <li class="relative">
+                <button
+                  id="pagesBtn"
+                  class="text-lg hover:text-red-500 flex items-center justify-center xl:justify-start gap-1"
+                >
+                  Pages
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+
+                <div
+                  id="pagesDropdown"
+                  class="hidden absolute top-full left-0 mt-2 w-40 bg-white text-black rounded shadow-lg"
+                >
+                  <a href="#" class="block px-4 py-2 hover:text-red-500">Login</a>
+                  <a href="#" class="block px-4 py-2 hover:text-red-500">Card</a>
+                  <a href="#" class="block px-4 py-2 hover:text-red-500">Element</a>
+                  <a href="#" class="block px-4 py-2 hover:text-red-500">About</a>
+                  <a href="#" class="block px-4 py-2 hover:text-red-500">Confirmation</a>
+                  <a href="#" class="block px-4 py-2 hover:text-red-500">Shopping Card</a>
+                  <a href="#" class="block px-4 py-2 hover:text-red-500">Product Checkout</a>
+                </div>
+              </li>
+
+              <li><a href="#" class="text-lg hover:text-red-500">Contact</a></li>
+            </ul>
+          </nav>
+
+          <!-- Search -->
+          <form class="relative order-2 xl:order-none justify-self-center">
+            <input
+              type="search"
+              placeholder="search"
+              class="border-2 p-1 rounded w-[200px]"
+            />
+            <i
+              class="fa-solid fa-magnifying-glass absolute right-2 top-2 text-gray-500"
+            ></i>
+          </form>
+
+          <!-- Icons -->
+          <div class="grid grid-flow-col gap-3 items-center justify-center order-4 xl:order-none">
+            <a href="#"><i class="fa-solid fa-heart hover:text-red-500"></i></a>
+            <a href="#"><i class="fa-solid fa-cart-shopping hover:text-red-500"></i></a>
+          </div>
+
+          <!-- Button -->
+          <button
+            class="bg-[#2577FD] text-white px-6 py-3 cursor-pointer rounded-2xl order-5 xl:order-none justify-self-center"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <section
+        class="bg-[#C8EBFF] bg-[url('./img/hero_man.png.webp')] bg-no-repeat bg-contain bg-center h-[500px]"
+      >
+        <div class="container mx-auto h-full grid place-items-end">
+          <div class="text-white p-6 rounded-lg max-w-md">
+            <h3 class="text-[#2577FD] text-3xl">60% Discount</h3>
+            <h1
+              class="text-6xl text-black animate__animated animate__fadeInRight"
+            >
+              Winter Collection
+            </h1>
+            <p
+              class="text-black text-2xl animate__animated animate__fadeInRight"
+            >
+              Best collection 2020
+            </p>
+            <button
+              class="bg-[#2577FD] text-white px-6 py-3 cursor-pointer rounded-2xl m-2 animate__animated animate__fadeInRight"
+            >
+              Shop Now
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-10">
+  <div class="container mx-auto">
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 place-items-center text-center">
+      
+      <div class="grid-item">
+        <img src="./img/cube.png" alt="cube" class="w-[70px] md:w-[100px] xl:w-[70px] mx-auto">
+        <h2 class="p-2 text-lg font-semibold">Free Shipping Method</h2>
+        <p class="whitespace-pre-line text-gray-600">
+            aorem ixpsacdolor sit ameasecur adipisicing elitsf 
+            <br>
+            edasd.
+        </p>
+      </div>
+      
+      <div class="grid-item">
+        <img src="./img/secure.png" alt="secure" class="w-[70px] md:w-[100px] xl:w-[70px] mx-auto">
+        <h2 class="p-2 text-lg font-semibold">Secure Payment System</h2>
+        <p class="whitespace-pre-line text-gray-600">
+            aorem ixpsacdolor sit ameasecur adipisicing elitsf 
+            <br>
+            edasd.
+        </p>
+      </div>
+      
+      <div class="grid-item">
+        <img src="./img/reset.png" alt="reset" class="w-[70px] md:w-[100px] xl:w-[70px] mx-auto">
+        <h2 class="p-2 text-lg font-semibold">Secure Payment System</h2>
+        <p class="whitespace-pre-line text-gray-600">
+            aorem ixpsacdolor sit ameasecur adipisicing elitsf 
+            <br>
+            edasd.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+    </main>
+
+    
+
+<!-- Footer Section -->
+<footer class="relative bg-gray-900 text-white pt-16 pb-8">
+  <!-- Wave SVG background -->
+  <div class="absolute -top-12 left-0 w-full h-12" style="background-image: url('data:image/svg+xml;utf8,<svg viewBox=...'); background-size: cover;"></div>
+  
+  <div class="max-w-7xl mx-auto px-5 grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-10 relative z-10">
+    <!-- About -->
+    <div>
+      <a href="index.html" class="justify-self-center xl:justify-self-start p-2"
+            ><img src="./img/logo.png.webp" alt="logo"
+          /></a>
+      <p class="mb-4 leading-relaxed opacity-90">Your premier destination for creative expression and professional production in the heart of Lucknow. We provide fully-equipped spaces for artists, creators, and businesses.</p>
+      <!-- Social Links -->
+      <div class="flex space-x-3">
+        <a href="#" class="w-10 h-10 bg-white bg-opacity-10 flex items-center justify-center rounded-full text-black transition-transform hover:-translate-y-1 hover:bg-pink-600">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" class="w-10 h-10 bg-white bg-opacity-10 flex items-center justify-center rounded-full text-black transition-transform hover:-translate-y-1 hover:bg-pink-600">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="w-10 h-10 bg-white bg-opacity-10 flex items-center justify-center rounded-full text-black transition-transform hover:-translate-y-1 hover:bg-pink-600">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#" class="w-10 h-10 bg-white bg-opacity-10 flex items-center justify-center rounded-full text-black transition-transform hover:-translate-y-1 hover:bg-pink-600">
+         <i class="fa-solid fa-globe"></i>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-xl text-pink-600 mb-6 border-b-2 border-pink-600 pb-2">Quick Links</h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="flex items-center gap-2 opacity-90 hover:opacity-100 hover:translate-x-1 transition"><i class="fas fa-chevron-right text-pink-600"></i> Home</a></li>
+        <li><a href="#" class="flex items-center gap-2 opacity-90 hover:opacity-100 hover:translate-x-1 transition"><i class="fas fa-chevron-right text-pink-600"></i> About Us</a></li>
+        <li><a href="#" class="flex items-center gap-2 opacity-90 hover:opacity-100 hover:translate-x-1 transition"><i class="fas fa-chevron-right text-pink-600"></i> Services</a></li>
+        <li><a href="#" class="flex items-center gap-2 opacity-90 hover:opacity-100 hover:translate-x-1 transition"><i class="fas fa-chevron-right text-pink-600"></i> Events</a></li>
+        <li><a href="#" class="flex items-center gap-2 opacity-90 hover:opacity-100 hover:translate-x-1 transition"><i class="fas fa-chevron-right text-pink-600"></i> Gallery</a></li>
+      </ul>
+    </div>
+    
+    <!-- Our Services -->
+    <div>
+      <h3 class="text-xl text-pink-600 mb-6 border-b-2 border-pink-600 pb-2">Our Services</h3>
+      <ul class="space-y-3">
+        <li><a href="#" class="flex items-center gap-2 opacity-90 hover:opacity-100 hover:translate-x-1 transition"><i class="fas fa-chevron-right text-pink-600"></i> Recording Studio</a></li>
+        <li><a href="#" class="flex items-center gap-2 opacity-90 hover:opacity-100 hover:translate-x-1 transition"><i class="fas fa-chevron-right text-pink-600"></i> Theatre Room</a></li>
+        <li><a href="#" class="flex items-center gap-2 opacity-90 hover:opacity-100 hover:translate-x-1 transition"><i class="fas fa-chevron-right text-pink-600"></i> Workshop Space</a></li>
+        <li><a href="#" class="flex items-center gap-2 opacity-90 hover:opacity-100 hover:translate-x-1 transition"><i class="fas fa-chevron-right text-pink-600"></i> Photoshoot Studio</a></li>
+        <li><a href="#" class="flex items-center gap-2 opacity-90 hover:opacity-100 hover:translate-x-1 transition"><i class="fas fa-chevron-right text-pink-600"></i> Event Hosting</a></li>
+      </ul>
+    </div>
+    
+    <!-- Contact Us -->
+    <div>
+      <h3 class="text-xl text-pink-600 mb-6 border-b-2 border-pink-600 pb-2">Contact Us</h3>
+      <ul class="space-y-4 mb-6">
+        <li class="flex items-start gap-4">
+          <i class="fas fa-map-marker-alt text-pink-600 mt-1"></i>
+          <div>
+            US
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <i class="fas fa-phone-alt text-pink-600 mt-1"></i>
+          <div>
+            <a href="tel:+91987654321" class="block hover:underline opacity-90 hover:opacity-100">+777 2345 7886</a>
+          
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <i class="fas fa-envelope text-pink-600 mt-1"></i>
+          <div>
+            <a href="mailto:kuldeepprajapati2111@gmail.com" class="block hover:underline opacity-90 hover:opacity-100">kuldeepprajapati2111@gmail.com</a>
+          </div>
+        </li>
+      </ul>
+      
+      <!-- Newsletter -->
+      <h3 class="text-xl text-pink-600 mb-2 border-b-2 border-pink-600 pb-2">Newsletter</h3>
+      <p class="mb-4 opacity-70">Subscribe to get updates on our latest events and offers.</p>
+      <form class="flex">
+        <input type="email" placeholder="Your Email" required class="flex-1 p-3 rounded-l-md focus:outline-none" />
+        <button type="submit" class="bg-pink-600 hover:bg-pink-500 text-white p-3 rounded-r-md transition">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+  
+  <!-- Footer Bottom -->
+  <div class="mt-16 pt-8 border-t border-gray-700 text-center opacity-70 text-sm">
+    <p>Copyright ©2025 All rights reserved  <i class="fas fa-heart text-blue-600"></i> by <a href="https://colorlib.com/" target="_blank" class="text-blue-500">Colorlib</a></p>
+  </div>
+</footer>
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
